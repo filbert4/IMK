@@ -1,0 +1,263 @@
+:root {
+  --primary-color: #1eaadf;
+  --secondary-color: #343a40;
+  --tertiary-color: #d4af37;
+}
+
+a {
+  color: white;
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: "Montserrat", sans-serif;
+  margin: 2px;
+  padding: 0;
+}
+
+hr,
+.line {
+  background-color: var(--tertiary-color);
+  width: 80%;
+}
+
+button {
+  all: unset;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+/* Navbar */
+.navbar.bg-dark {
+  background-color: var(--primary-color) !important;
+}
+
+/* Header */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Hitam dengan opacity 0.4 */
+  z-index: 1; /* Letakkan overlay di atas gambar, tapi di bawah teks */
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.header .container {
+  z-index: 2;
+}
+
+.header .container button {
+  background-color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.header .container button a {
+  color: white;
+}
+
+.visi_misi_section {
+  text-align: center;
+  margin: 80px 0;
+}
+
+.visi_misi_section h2 {
+  margin: 15px;
+}
+
+.visi_misi_section .visi_misi_container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5%;
+}
+
+.visi_misi_section .visi_misi_container .visi_misi_card {
+  padding: 0 5%;
+  width: 45%;
+}
+
+.visi_misi_section .visi_misi_container .visi_misi_card p {
+  text-align: justify;
+}
+
+.visi_misi_section .visi_misi_container .line {
+  width: 1px; /* Lebar garis */
+  margin: 1% 0;
+}
+
+/* Fasilitas */
+.fasilitas {
+  display: flex;
+  color: white;
+  background-color: var(--primary-color);
+  align-items: center;
+  padding: 60px 80px;
+}
+
+.fasilitas button {
+  background-color: var(--tertiary-color);
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 0 20px;
+}
+
+.fasilitas:hover button {
+  cursor: pointer;
+}
+
+/* Laboratorium */
+.laboratoriumRiset {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+.laboratorium {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Menengahkan secara horizontal */
+  align-items: center; /* Menengahkan secara vertikal */
+  margin: 15px 5%;
+}
+.shadow {
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.card {
+  position: relative;
+  color: white;
+  margin: 10px;
+  background-size: cover; /* Gambar menyesuaikan ukuran layar */
+  background-position: center; /* Gambar terpusat */
+  background-repeat: no-repeat; /* Gambar tidak diulang */
+  justify-content: center;
+  text-align: center;
+  width: 40vh;
+  height: 40vh;
+  overflow: hidden; /* Agar overlay tidak keluar dari batas card */
+}
+/* Overlay hitam yang tidak mempengaruhi teks */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Hitam dengan opacity 0.4 */
+  z-index: 1; /* Letakkan overlay di atas gambar, tapi di bawah teks */
+}
+.card:hover {
+  cursor: pointer;
+}
+/* Konten di dalam card (teks) */
+.card > * {
+  position: relative;
+  z-index: 2; /* Agar berada di atas overlay */
+}
+.card .description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.5s ease; /* Fade-in effect */
+  align-content: center;
+}
+/* On hover, show the description with fade-in */
+.card:hover .description {
+  opacity: 1;
+  visibility: visible;
+}
+.card .description .desc {
+  text-align: justify;
+  margin: 10px 5px;
+  height: 50%;
+  overflow: hidden;
+}
+.card .description .more {
+  color: cyan;
+}
+.card .description a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.berita {
+  margin: 20px;
+}
+
+.berita h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+.berita .display_berita {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.berita .display_berita .berita_card {
+  width: 60vh;
+  height: 80vh;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.berita .display_berita .berita_card .gambar_berita {
+  border-radius: 5px;
+  background-color: gray;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50%;
+}
+
+.berita .display_berita .berita_card h4 {
+  height: 15%;
+  overflow: hidden;
+}
+
+.berita .display_berita .berita_card p {
+  height: 20%;
+  overflow: hidden;
+}
+
+.berita .display_berita .berita_card button {
+  background-color: var(--tertiary-color);
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
